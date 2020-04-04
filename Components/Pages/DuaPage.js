@@ -1,8 +1,9 @@
 import React from 'react';
 import ContentCard from './ContentCard';
+import ContentSwiper from './ContentSwiper';
 import DuaIftitah from '../Data/DuaIftitah';
 import { View, Container, Content } from 'native-base';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ImageBackground } from 'react-native';
 
 function DuaPage() {
   const duaContent = DuaIftitah.map(dua => (
@@ -10,10 +11,10 @@ function DuaPage() {
   ));
 
   return (
-    <Container>
+    <Container style={styles.container}>
       <Content>
-        <View style={styles.container}>
-          {duaContent}
+        <View style={styles.content}>
+          <ContentSwiper />
         </View>
       </Content>
     </Container>
@@ -22,7 +23,11 @@ function DuaPage() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'green',
+    flex: 1,
+    backgroundColor: 'transparent',
+  },
+  content: {
+    backgroundColor: 'transparent',
   },
 });
 
